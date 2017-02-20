@@ -78,12 +78,10 @@ var Notification = {
               payload: JSON.parse(initialSysNotificationPayload)
             }
 
-            //listener(event);
-            
+            //listener(event); //notification press event listener was called 2 times
             NotificationModule.removeInitialSysNotification();
           }
         });
-        
         break;
     }
   },
