@@ -7,7 +7,6 @@ var NotificationModule = NativeModules.NotificationModule;
 var Notification = {
   create: function(attributes = {}) {
     return new Promise(function(resolve, reject) {
-      alert('hello');
       NotificationModule.rGetApplicationName(function(e) {}, function(applicationName) {
 
         // Set defaults
@@ -64,14 +63,13 @@ var Notification = {
   },
 
   addListener: function(type, listener) {
-    alert('whoa');
     switch (type) {
       case 'press':
       case 'click':
         DeviceEventEmitter.addListener('sysNotificationClick', listener);
 
         NotificationModule.getInitialSysNotification(function(initialSysNotificationId,
-                                                              initialSysNotificationAction, 
+                                                              initialSysNotificationAction,
                                                               initialSysNotificationPayload) {
           if (initialSysNotificationId) {
             var event = {
@@ -236,9 +234,8 @@ function decodeNativeNotification(attributes) {
 }
 
 DeviceEventEmitter.addListener('sysModuleNotificationClick', function(e) {
-  console.log(e);
   var event = {
-    test: 'hello',
+    id: e.notificationID,
     action: e.action,
     payload: JSON.parse(e.payload)
   }
