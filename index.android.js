@@ -1,9 +1,7 @@
-'use strict';
+import React from 'react';
+import {DeviceEventEmitter, NativeModules} from 'react-native';
 
-var React = require('react-native');
-var { DeviceEventEmitter } = React;
-
-var NotificationModule = require('react-native').NativeModules.NotificationModule;
+var NotificationModule = NativeModules.NotificationModule;
 
 // Warp the native module so we can do some pre/post processing to have a cleaner API.
 var Notification = {
