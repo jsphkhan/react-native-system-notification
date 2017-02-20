@@ -78,7 +78,7 @@ var Notification = {
               payload: JSON.parse(initialSysNotificationPayload)
             }
 
-            listener(event);
+            //listener(event);
             
             NotificationModule.removeInitialSysNotification();
           }
