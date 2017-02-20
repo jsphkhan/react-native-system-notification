@@ -64,6 +64,7 @@ var Notification = {
   },
 
   addListener: function(type, listener) {
+    alert('whoa');
     switch (type) {
       case 'press':
       case 'click':
