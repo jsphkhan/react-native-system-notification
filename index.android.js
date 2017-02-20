@@ -7,7 +7,7 @@ var NotificationModule = NativeModules.NotificationModule;
 var Notification = {
   create: function(attributes = {}) {
     return new Promise(function(resolve, reject) {
-      alert('test');
+      alert('hello');
       NotificationModule.rGetApplicationName(function(e) {}, function(applicationName) {
 
         // Set defaults
