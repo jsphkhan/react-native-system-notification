@@ -7,6 +7,7 @@ var NotificationModule = NativeModules.NotificationModule;
 var Notification = {
   create: function(attributes = {}) {
     return new Promise(function(resolve, reject) {
+      alert('test');
       NotificationModule.rGetApplicationName(function(e) {}, function(applicationName) {
 
         // Set defaults
@@ -73,6 +74,7 @@ var Notification = {
                                                               initialSysNotificationPayload) {
           if (initialSysNotificationId) {
             var event = {
+              id: initialSysNotificationId,
               action: initialSysNotificationAction,
               payload: JSON.parse(initialSysNotificationPayload)
             }
